@@ -1,0 +1,10 @@
+/* README for search4substring
+*Tues, Aug 30 2022
+*  Basic: Given a string s1, does another string s2, exist inside it? If so,
+*return the index of s1 where s2 starts, or -1 if s2 not present.
+*
+*  Some twists: various ways of doing it. One way -- s2 is a string. Turn the
+*part of s1 you think might contain s2 into a string, then compare strings. I
+* would be build on past programs.
+*
+*/
