@@ -63,12 +63,32 @@ int main(int argc, char *argv[]) {
 
 int find_string(char s1[], char s2[]) {
 
-    int index;
-    index = -1;
+    int index, i, j;
 
+    index = -1;                 /* addr of start */
+    i = 0;                      /* index for s1 */
+    j = 0;                      /* index for s2 */
 
-
-
+    while(s1[i] != '\0') {
+        if(s1[i] == s2[0]) {    /* found first s2 */
+            index = i;
+            ++i;
+            ++j;
+            while((s1[i] != '\0') && (s2[j] != '\0')){
+                if(s1[i] == s2[j]) {
+                    ++i;
+                    ++j;
+                }
+                else {
+                    index = -1;
+                    break;
+                }
+            }
+        }
+        else {
+            ++i;
+        }
+    }
 
 
 
