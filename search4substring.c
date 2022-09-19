@@ -97,18 +97,13 @@ void get_string(char s[], int max) {
     char c;
     int i;
 
-    c = getchar();
-    while(c != EOF) {
-        s[i] = c;
+    i = 0;
+    do {
         c = getchar();
-    }
-
-
-
-
-
-
-
+        s[i] = c;
+        ++i;
+    } while((c == '\n') && (i <= max));
+    s[i - 1] = '\0';
 
 
 }
