@@ -23,39 +23,36 @@
 
 int string_len(char s[]);
 
-void get_string(char s[], int max);
+void get_string(char s[]);
 
 int find_string(char s1[], char s2[]);
 
 int main(int argc, char *argv[]) {
 
-    char s1[81] = {'\0'};
-    char s2[81] = {'\0'};
+    char s1[81];
+    char s2[81];
 
     int i;          /* index for s1[] */
     int j;          /* index for s2[] */
+    int index;      /* location of s2 in s1 */
 
     /* get s1 */
 
-    get_string(s1, MAX_LENGTH);
+    printf("Enter line 1: ");
 
+    get_string(s1);
 
     /* get s2 */
 
-    get_string(s2, MAX_LENGTH);
+    printf("Enter string 2: ");
 
+    get_string(s2);
 
+    /* use find_string(s1, s2) */
 
+    index = find_string(s1, s2);
 
-
-
-
-
-
-
-
-
-
+    printf("index is %i\n", index);
 
 
     return(0);
@@ -112,17 +109,17 @@ int string_len(char s[]) {
 }
 
 
-void get_string(char s[], int max) {
+void get_string(char s[]) {
 
-    char c;
     int i;
+    char c;
 
     i = 0;
     do {
         c = getchar();
         s[i] = c;
         ++i;
-    } while((c == '\n') && (i <= max));
+    } while(c != '\n');
     s[i - 1] = '\0';
 
 
